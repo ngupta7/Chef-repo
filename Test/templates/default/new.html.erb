@@ -1,0 +1,14 @@
+<html>
+ <body>
+   <h1><%= @companyName %></h1>
+   <ul>
+     <% @productlist.each do |product| %>
+     <li><%= product %></li>
+     <% end %>
+   <% if @premium %>
+    <strong> You are a premium customer </strong>
+   <% else %>
+   here are ads for YOU!!
+   <% end %>
+</body>
+</html>
