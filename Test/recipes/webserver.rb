@@ -1,3 +1,7 @@
+node.default["Test"]["companyName"] = "This is from in-line recipe"
+node.default["Test"]["productlist"] = ["product X","product Y","product Z"]
+
+
 package "this is arbitary" do
   action :install
   case node[:platform_family]
@@ -30,8 +34,8 @@ template "/var/www/html/new.html" do
   source "new.html.erb"
   action :create
   variables ({
-     :companyName => "My company",
-     :productlist => ["course1","course2"],
+     :companyName => node["Test"]["companyName"],
+     :productlist => node["Test"]["productlist"],
      :premium => true
    })
  end
